@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Aviator Signal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="particles-canvas"></canvas>
+  <div class="scanlines"></div>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <div class="logo-img-wrap">
+          <img src="aviator.png" alt="Aviator" class="logo-img" />
+        </div>
+        <div class="header-labels">
+          <span class="header-signal-tag">SIGNAL</span>
+          <span class="header-sub">PREDICTION SYSTEM v2.4</span>
+        </div>
+      </div>
+      <div class="header-status">
+        <span class="status-dot"></span>
+        <span class="status-text">LIVE</span>
+      </div>
+    </header>
+
+    <!-- Main signal area -->
+    <main class="signal-main">
+      <div class="circle-glow-ring">
+        <div class="signal-circle" id="signal-circle">
+
+          <!-- Idle -->
+          <div class="circle-content" id="state-idle">
+            <div class="circle-label">SIGNAL</div>
+            <div class="circle-sub">READY</div>
+          </div>
+
+          <!-- Loading -->
+          <div class="circle-content hidden" id="state-loading">
+            <div class="circle-label loading-text" id="loading-text">SCANNING</div>
+            <div class="circle-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div class="circle-content hidden" id="state-result">
+            <div class="circle-result-label">CURRENT</div>
+            <div class="circle-multiplier" id="multiplier-value">—</div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- CTA Button -->
+    <div class="cta-wrap">
+      <button class="get-signal-btn" id="get-signal-btn" onclick="getSignal()">
+        <span class="btn-glow"></span>
+        <span class="btn-icon">⚡</span>
+        <span class="btn-text" id="btn-text">GET SIGNAL</span>
+        <span class="btn-arrow">→</span>
+      </button>
+      <p class="btn-hint" id="btn-hint">Tap to receive prediction</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-tg-card">
+        <div class="footer-tg-top">
+          <div class="footer-tg-left">
+            <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            <span class="footer-tg-sub">Official Channel</span>
+          </div>
+          <div class="footer-tg-badge">JOIN NOW</div>
+        </div>
+        <div class="footer-tg-handle">@ZARYXEL</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
